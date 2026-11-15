@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>VStyle - Fashion Store</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header class="navbar">
+
+    <div class="logo">
+        <span>V</span>STYLE
+    </div>
+
+    <nav>
+        <a href="#" onclick="filterProducts('all')">HOME</a>
+        <a href="#" onclick="filterProducts('men')">MEN</a>
+        <a href="#" onclick="filterProducts('women')">WOMEN</a>
+        <a href="#" onclick="filterProducts('kids')">KIDS</a>
+        <a href="#" onclick="filterProducts('beauty')">BEAUTY</a>
+    </nav>
+
+    <div class="search-box">
+        🔍
+        <input
+            type="text"
+            id="searchInput"
+            placeholder="Search for products, brands and more"
+            onkeyup="searchProducts()"
+        >
+    </div>
+
+    <div class="actions">
+        <div>
+            👤
+            <small>Profile</small>
+        </div>
+
+        <div onclick="showWishlist()">
+            ❤️
+            <small>Wishlist</small>
+        </div>
+
+        <div onclick="openCart()">
+            🛒
+            <small>Bag</small>
+            <span id="cartCount">0</span>
+        </div>
+    </div>
+
+</header>
+
+
+<!-- SALE BANNER -->
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <p>BIG FASHION SALE</p>
+
+        <h1>UP TO 70% OFF</h1>
+
+        <h2>New styles. New season.</h2>
+
+        <button onclick="filterProducts('all')">
+            SHOP NOW →
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- CATEGORIES -->
+
+<section class="categories">
+
+    <h2>SHOP BY CATEGORY</h2>
+
+    <div class="category-grid">
+
+        <div onclick="filterProducts('men')">
+            <img src="https://images.unsplash.com/photo-1617137968427-85924c800a22?auto=format&fit=crop&w=500&q=80">
+            <h3>Men</h3>
+        </div>
+
+        <div onclick="filterProducts('women')">
+            <img src="https://images.unsplash.com/photo-1496747611176-843222e1e57c?auto=format&fit=crop&w=500&q=80">
+            <h3>Women</h3>
+        </div>
+
+        <div onclick="filterProducts('kids')">
+            <img src="https://images.unsplash.com/photo-1503919545889-aef636e10ad4?auto=format&fit=crop&w=500&q=80">
+            <h3>Kids</h3>
+        </div>
+
+        <div onclick="filterProducts('beauty')">
+            <img src="https://images.unsplash.com/photo-1596462502278-27bfdc403348?auto=format&fit=crop&w=500&q=80">
+            <h3>Beauty</h3>
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- PRODUCTS -->
+
+<section class="products-section">
+
+    <div class="section-title">
+
+        <div>
+            <h2>TRENDING NOW</h2>
+            <p>Fresh styles picked for you</p>
+        </div>
+
+        <select id="sortSelect" onchange="sortProducts()">
+            <option value="default">Sort By</option>
+            <option value="low">Price: Low to High</option>
+            <option value="high">Price: High to Low</option>
+            <option value="discount">Highest Discount</option>
+        </select>
+
+    </div>
+
+
+    <div id="productGrid" class="product-grid"></div>
+
+</section>
+
+
+<!-- CART -->
+
+<div id="cartModal" class="modal">
+
+    <div class="cart">
+
+        <div class="cart-header">
+            <h2>Your Shopping Bag</h2>
+
+            <button onclick="closeCart()">✕</button>
+        </div>
+
+        <div id="cartItems"></div>
+
+        <div class="cart-total">
+
+            <div>
+                <span>Total</span>
+                <strong id="cartTotal">₹0</strong>
+            </div>
+
+            <button onclick="checkout()">
+                PLACE ORDER
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- PRODUCT DETAILS -->
+
+<div id="productModal" class="modal">
+
+    <div class="product-details">
+
+        <button class="close-btn" onclick="closeProduct()">
+            ✕
+        </button>
+
+        <img id="detailImage">
+
+        <div>
+
+            <h2 id="detailName"></h2>
+
+            <p id="detailBrand"></p>
+
+            <h3 id="detailPrice"></h3>
+
+            <p id="detailDescription"></p>
+
+            <button id="detailAddButton" class="add-button">
+                ADD TO BAG
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div>
+        <h3>VSTYLE</h3>
+        <p>Your destination for everyday fashion.</p>
+    </div>
+
+    <div>
+        <h3>ONLINE SHOPPING</h3>
+        <p>Men</p>
+        <p>Women</p>
+        <p>Kids</p>
+        <p>Beauty</p>
+    </div>
+
+    <div>
+        <h3>USEFUL LINKS</h3>
+        <p>Contact Us</p>
+        <p>Returns</p>
+        <p>Shipping</p>
+        <p>Privacy Policy</p>
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
